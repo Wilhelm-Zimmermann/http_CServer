@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "memory.h": "c",
+        "type_traits": "c",
+        "register.h": "c",
+        "instructions.h": "c",
+        "functional": "c",
+        "logger.h": "c",
+        "cpu.h": "c",
+        "stdint.h": "c",
+        "prefixedinstructions.h": "c",
+        "array": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "utility": "c",
+        "rom.h": "c",
+        "ppu.h": "c",
+        "stdbool.h": "c"
+    }
+}
