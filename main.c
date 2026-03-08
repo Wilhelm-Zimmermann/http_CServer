@@ -85,35 +85,35 @@ Response route_redirect(char *requested_path)
     {
         Image *cat_photo = get_file("./cat.jpg");
         resp.content = cat_photo->image_blob;
-        resp.content_type = "Content-Type: image/jpg\r\n\r\n";
+        resp.content_type = "HTTP/1.1 200 OK\r\nContent-Type: image/jpg\r\n\r\n";
         resp.response_size = cat_photo->image_size;
     }
     else if (strcmp(requested_path, "/cat") == 0)
     {
         Image *cat_photo = get_file("./cat.jpg");
         resp.content = cat_photo->image_blob;
-        resp.content_type = "Content-Type: image/jpg\r\n\r\n";
+        resp.content_type = "HTTP/1.1 200 OK\r\nContent-Type: image/jpg\r\n\r\n";
         resp.response_size = cat_photo->image_size;
     }
     else if (strcmp(requested_path, "/dog") == 0)
     {
         Image *dog_photo = get_file("./dog.jpg");
         resp.content = dog_photo->image_blob;
-        resp.content_type = "Content-Type: image/jpg\r\n\r\n";
+        resp.content_type = "HTTP/1.1 200 OK\r\nContent-Type: image/jpg\r\n\r\n";
         resp.response_size = dog_photo->image_size;
     }
     else if (strcmp(requested_path, "/") == 0)
     {
         Image *html_file = get_file("./index.html");
         resp.content = html_file->image_blob;
-        resp.content_type = "Content-Type: text/html\r\n\r\n";
+        resp.content_type = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n";
         resp.response_size = html_file->image_size;
     }
     else
     {
         Image *html_file = get_file("./not_found.html");
         resp.content = html_file->image_blob;
-        resp.content_type = "Content-Type: text/html\r\n\r\n";
+        resp.content_type = "HTTP/1.1 404 OK\r\nContent-Type: text/html\r\n\r\n";
         resp.response_size = html_file->image_size;
     }
 
@@ -177,7 +177,7 @@ int main()
         printf("Blank pos last: %i\n", last_blank_pos);
         Response resp = route_redirect(path);
         free(path);
-        char *response = "HTTP/1.1 200 OK\r\n";
+        char *response = "";
 
         size_t header_len = strlen(response);
         size_t resp_content_type_size = strlen(resp.content_type);
