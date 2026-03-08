@@ -73,7 +73,7 @@ char *route_path(char *buffer, int start_point, int end_point)
     {
         path[i] = buffer[i + (start_point + 1)];
     }
-    path[char_length + 1] = '\0';
+    path[char_length] = '\0';
     return path;
 }
 
